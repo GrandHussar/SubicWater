@@ -24,6 +24,10 @@ app.register_blueprint(reports_bp)
 from page.settings import settings_bp
 app.register_blueprint(settings_bp)
 
+from page.management import management_bp
+app.register_blueprint(management_bp)
+
+
 
 
 # ✅ User model

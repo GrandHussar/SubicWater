@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sensor Management</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='management.css') }}">
+</head>
+<body>
+
+  <!-- Top Bar (same as dashboard) -->
+  <div class="top-bar">
+    <div class="top-left">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+    </div>
+    <div class="top-center">Sensor Management</div>
+    <div class="top-right">
+      <a href="{{ url_for('collider.dashboard') }}">Dashboard</a>
+      <a href="{{ url_for('reports.reports') }}">Reports</a>
+      <a href="{{ url_for('settings.settings') }}">Settings</a>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- Main Content Container -->
+  <div class="management-card">
+    <h2>Connected Sensors</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Sensor Name</th>
+          <th>Type</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for sensor in sensors %}
+        <tr>
+          <td>{{ sensor.name }}</td>
+          <td>{{ sensor.type }}</td>
+          <td class="{{ 'status-active' if sensor.status == 'Active' else 'status-inactive' }}">{{ sensor.status }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

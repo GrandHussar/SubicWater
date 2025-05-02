@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reports</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="top-left">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+    </div>
+    <div class="top-center">Reports</div>
+    <div class="top-right">
+      <a href="/dashboard">Dashboard</a>
+      <a href="/reports">Reports</a>
+      <a href="#">Settings</a>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div style="padding: 40px;">
+    <table style="width: 100%; border-collapse: collapse; background-color: #ffffff;">
+      <thead>
+        <tr style="background-color: #f0f0f0;">
+          <th style="padding: 12px; border: 1px solid #ccc;">ID</th>
+          <th style="padding: 12px; border: 1px solid #ccc;">Timestamp</th>
+          <th style="padding: 12px; border: 1px solid #ccc;">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ccc;">1</td>
+          <td style="padding: 12px; border: 1px solid #ccc;">2024-05-02 14:03</td>
+          <td style="padding: 12px; border: 1px solid #ccc;">XML | PDF</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ccc;">2</td>
+          <td style="padding: 12px; border: 1px solid #ccc;">2024-05-02 14:04</td>
+          <td style="padding: 12px; border: 1px solid #ccc;">XML | PDF</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

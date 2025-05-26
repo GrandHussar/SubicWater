@@ -187,6 +187,35 @@
   .logout-button:hover {
     background-color: #c9302c;
   }
+
+  .live-ph-box {
+    background-color: #eaf4ea;
+    border: 2px solid #84a98c;
+    border-radius: 8px;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ph-data {
+    text-align: center;
+  }
+  
+  .ph-number {
+    font-size: 2.5rem;
+    color: #1b4332;
+    font-weight: bold;
+  }
+  
+  .ph-time {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 5px;
+  }
+  
   
   
   

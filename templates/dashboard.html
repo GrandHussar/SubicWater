@@ -94,9 +94,15 @@
           </div>
       
           <!-- Right: Speedometer Gauge -->
-          <div class="efficiency-gauge">
-            <canvas id="efficiencyGaugeChart"></canvas>
+            <!-- Live pH Display Box -->
+            <div class="efficiency-gauge live-ph-box">
+            <h3 style="margin-bottom: 10px;">Live pH Level</h3>
+            <div class="ph-data">
+              <span id="phValue" class="ph-number">--</span>
+              <span id="phTime" class="ph-time">Waiting...</span>
+            </div>
           </div>
+
         </div>
       </div>
    
@@ -275,31 +281,7 @@
     }
   });
 
-  // Gauge Chart with Animation
-  const gaugeCtx = document.getElementById('efficiencyGaugeChart').getContext('2d');
-  const gaugeChart = new Chart(gaugeCtx, {
-    type: 'doughnut',
-    data: {
-      labels: ['Efficiency', 'Remaining'],
-      datasets: [{
-        data: [65, 35],
-        backgroundColor: ['#4CAF50', '#e0e0e0'],
-        cutout: '80%',
-        rotation: -90,
-        circumference: 180,
-        borderWidth: 0
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      animation: {
-        duration: 1000,
-        easing: 'easeOutElastic'
-      },
-      plugins: { legend: { display: false } }
-    }
-  });
+  //the ph design
 
 
   const bell = document.getElementById('notificationBell');
@@ -308,7 +290,16 @@
   bell.addEventListener('click', () => {
     dropdown.classList.toggle('show');
   });
-
+  
+  setInterval(() => {
+    fetch('/api/ph')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("phValue").innerText = data.ph.toFixed(2);
+        const t = new Date(data.timestamp * 1000);
+        document.getElementById("phTime").innerText = "Updated: " + t.toLocaleTimeString();
+      });
+  }, 2000);
 
 
   </script>

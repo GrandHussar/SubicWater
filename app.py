@@ -1,8 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for, session
+from flask import jsonify   
 from page.models import db, AllowedUser 
+from flask_cors import CORS
+import json
 
 # ✅ Create Flask app first
 app = Flask(__name__)
+CORS(app)  # Allow CORS
 app.secret_key = 'secret123'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -28,7 +32,11 @@ from page.management import management_bp
 app.register_blueprint(management_bp)
 
 
-
+@app.route('/api/ph')
+def get_ph():
+    with open("ph_data.json") as f:
+        data = json.load(f)
+    return jsonify(data)
 
 # ✅ User model
 #class AllowedUser(db.Model):

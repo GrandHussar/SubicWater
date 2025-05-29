@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
+import Reports from './components/Reports';
+import Settings from './components/Settings';
+import Management from './components/Management';
 import axios from 'axios';
 
 function App() {
@@ -24,6 +27,9 @@ function App() {
         <Route path="/login" element={<Login onLogin={() => setLoggedIn(true)} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/" element={loggedIn ? <Dashboard phData={phData} /> : <Navigate to="/login" />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/management" element={<Management />} />
       </Routes>
     </Router>
   );

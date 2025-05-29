@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../styles/dashboard.css';
 import Chart from 'chart.js/auto';
+import GaugeChart from 'react-gauge-chart';
 
 const Dashboard = () => {
   const chartsRef = useRef({});
@@ -8,10 +9,9 @@ const Dashboard = () => {
   const leftRef = useRef(null);
   const rightRef = useRef(null);
   const barRef = useRef(null);
-  const phValueRef = useRef(null);
   const phTimeRef = useRef(null);
-  const bellRef = useRef(null);
-  const dropdownRef = useRef(null);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [phValue, setPhValue] = useState(0);
 
   useEffect(() => {
     const destroyChart = (id) => {
@@ -89,25 +89,47 @@ const Dashboard = () => {
     );
 
     makeChart(barRef, 'barChart', 'bar',
-      ['Sensor A', 'Sensor B', 'Sensor C'],
+      ['Sensor A'],
       [{
         label: 'Wastewater Level',
-        data: [70, 40, 90],
+        data: [70],
         backgroundColor: 'rgba(102, 255, 153, 0.8)',
-        borderRadius: 5
-      }]
+        borderRadius: 5,
+        barThickness: 30
+      }],
+      {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks: {
+              font: {
+                size: 12
+              }
+            }
+          },
+          y: {
+            beginAtZero: true,
+            grid: { display: true },
+            ticks: {
+              font: {
+                size: 12
+              }
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            display: false
+          }
+        }
+      }
     );
-
-    const toggleDropdown = () => {
-      dropdownRef.current?.classList.toggle('show');
-    };
-
-    bellRef.current?.addEventListener('click', toggleDropdown);
 
     return () => {
       Object.values(chartsRef.current).forEach(chart => chart.destroy());
       chartsRef.current = {};
-      bellRef.current?.removeEventListener('click', toggleDropdown);
     };
   }, []);
 
@@ -116,8 +138,8 @@ const Dashboard = () => {
       fetch('http://localhost:5000/api/ph')
         .then(res => res.json())
         .then(data => {
-          if (phValueRef.current && phTimeRef.current) {
-            phValueRef.current.innerText = data.ph.toFixed(2);
+          setPhValue(data.ph);
+          if (phTimeRef.current) {
             const t = new Date(data.timestamp * 1000);
             phTimeRef.current.innerText = "Updated: " + t.toLocaleTimeString();
           }
@@ -137,8 +159,13 @@ const Dashboard = () => {
           <a href="/reports">Reports</a>
           <a href="/settings">Settings</a>
           <div className="notification-wrapper">
-            <img ref={bellRef} src="/bell.jpg" className="icon" alt="Notifications" />
-            <div ref={dropdownRef} className="notification-dropdown">
+            <img
+              src="/bell.jpg"
+              className="icon"
+              alt="Notifications"
+              onClick={() => setDropdownVisible(!dropdownVisible)}
+            />
+            <div className={`notification-dropdown ${dropdownVisible ? 'show' : ''}`}>
               <div className="notif-message"><strong>NOTIFICATIONS</strong><hr /></div>
               <div className="notification-item">
                 <img src="/water.png" className="notif-icon" />
@@ -168,10 +195,16 @@ const Dashboard = () => {
             <canvas ref={barRef} />
             <div className="live-ph-box">
               <h3>Live pH Level</h3>
-              <div className="ph-data">
-                <span ref={phValueRef}>--</span>
-                <span ref={phTimeRef}>Waiting...</span>
-              </div>
+              <GaugeChart
+                id="ph-gauge"
+                nrOfLevels={5}
+                colors={["#EA4228", "#F5CD19", "#5BE12C", "#007F00", "#004400"]}
+                arcWidth={0.3}
+                percent={phValue / 14}
+                textColor="#000"
+                formatTextValue={() => phValue.toFixed(2)}
+              />
+              <div className="ph-time" ref={phTimeRef}>Waiting...</div>
             </div>
           </div>
 

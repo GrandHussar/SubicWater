@@ -12,6 +12,8 @@ const Dashboard = () => {
   const phTimeRef = useRef(null);
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [phValue, setPhValue] = useState(0);
+  const [lastUpdated, setLastUpdated] = useState('');
+  const [selectedSensor, setSelectedSensor] = useState('main');
 
   useEffect(() => {
     const destroyChart = (id) => {
@@ -103,27 +105,15 @@ const Dashboard = () => {
         scales: {
           x: {
             grid: { display: false },
-            ticks: {
-              font: {
-                size: 12
-              }
-            }
+            ticks: { font: { size: 12 } }
           },
           y: {
             beginAtZero: true,
             grid: { display: true },
-            ticks: {
-              font: {
-                size: 12
-              }
-            }
+            ticks: { font: { size: 12 } }
           }
         },
-        plugins: {
-          legend: {
-            display: false
-          }
-        }
+        plugins: { legend: { display: false } }
       }
     );
 
@@ -139,8 +129,9 @@ const Dashboard = () => {
         .then(res => res.json())
         .then(data => {
           setPhValue(data.ph);
+          const t = new Date(data.timestamp * 1000);
+          setLastUpdated(t.toLocaleTimeString());
           if (phTimeRef.current) {
-            const t = new Date(data.timestamp * 1000);
             phTimeRef.current.innerText = "Updated: " + t.toLocaleTimeString();
           }
         });
@@ -148,6 +139,59 @@ const Dashboard = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  const handleSensorClick = (sensorName) => {
+    setSelectedSensor(sensorName);
+  };
+
+  const sensors = [
+    { id: 'ph', label: 'pH Sensor' },
+    { id: 'temp', label: 'Temperature Sensor' },
+    { id: 'flow', label: 'Water Flow Sensor' },
+    { id: 'turbidity', label: 'Turbidity Sensor' },
+    { id: 'ultrasonic', label: 'Ultrasonic Sensor' },
+    { id: 'color', label: 'Color Recognition Sensor' }
+  ];
+
+  const renderSensorMap = () => {
+    if (selectedSensor === 'main') {
+      return (
+        <div className="sensor-button-grid">
+          {sensors.map(({ id, label }) => (
+            <button key={id} onClick={() => handleSensorClick(id)} className="sensor-button">{label}</button>
+          ))}
+        </div>
+      );
+    } else if (selectedSensor === 'ph') {
+      return (
+        <div className="sensor-detail-box">
+          <h3>pH Sensor (PH0-14)</h3>
+          <p>Measures acidity or alkalinity (0–14).</p>
+          <GaugeChart
+            id="ph-gauge-detail"
+            nrOfLevels={5}
+            colors={["#EA4228", "#F5CD19", "#5BE12C", "#007F00", "#004400"]}
+            arcWidth={0.3}
+            percent={phValue / 14}
+            textColor="#000"
+            formatTextValue={() => phValue.toFixed(2)}
+          />
+          <p>Status: OK ✅</p>
+          <p>Last updated: {lastUpdated}</p>
+          <button className="back-button" onClick={() => handleSensorClick('main')}>Back</button>
+        </div>
+      );
+    } else {
+      const sensor = sensors.find(s => s.id === selectedSensor);
+      return (
+        <div className="sensor-detail-box">
+          <h3>{sensor?.label}</h3>
+          <p>Details for {sensor?.label} go here.</p>
+          <button className="back-button" onClick={() => handleSensorClick('main')}>Back</button>
+        </div>
+      );
+    }
+  };
 
   return (
     <div>
@@ -186,7 +230,7 @@ const Dashboard = () => {
       <div style={{ padding: 40, display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 20 }}>
         <div className="sensor-map">
           <h2>Sensor Map</h2>
-          <img src="/sensormap.png" alt="Sensor Map" style={{ maxWidth: '100%' }} />
+          {renderSensorMap()}
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>

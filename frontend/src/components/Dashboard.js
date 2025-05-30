@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import '../styles/dashboard.css';
 import Chart from 'chart.js/auto';
 import GaugeChart from 'react-gauge-chart';
+import Swal from 'sweetalert2';
 
 const Dashboard = () => {
   const chartsRef = useRef({});
@@ -9,11 +10,16 @@ const Dashboard = () => {
   const leftRef = useRef(null);
   const rightRef = useRef(null);
   const barRef = useRef(null);
+  const barRef2 = useRef(null);
+
   const phTimeRef = useRef(null);
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [phValue, setPhValue] = useState(0);
   const [lastUpdated, setLastUpdated] = useState('');
   const [selectedSensor, setSelectedSensor] = useState('main');
+  const [customNotifications, setCustomNotifications] = useState([]);
+  const [phAlertShown, setPhAlertShown] = useState(false);
+
 
   useEffect(() => {
     const destroyChart = (id) => {
@@ -67,55 +73,43 @@ const Dashboard = () => {
         tension: 0.4
       }]
     );
-
-    makeChart(rightRef, 'rightGraph', 'line',
-      Array.from({ length: 10 }, (_, i) => i + 1),
-      [
-        {
-          label: 'Sensor A',
-          data: Array.from({ length: 10 }, () => Math.floor(Math.random() * 100)),
-          borderColor: 'rgba(255, 99, 132, 1)',
-          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-          borderWidth: 2,
-          tension: 0.4
-        },
-        {
-          label: 'Sensor B',
-          data: Array.from({ length: 10 }, () => Math.floor(Math.random() * 100)),
-          borderColor: 'rgba(255, 206, 86, 1)',
-          backgroundColor: 'rgba(255, 206, 86, 0.2)',
-          borderWidth: 2,
-          tension: 0.4
-        }
-      ]
-    );
-
-    makeChart(barRef, 'barChart', 'bar',
-      ['Sensor A'],
-      [{
-        label: 'Wastewater Level',
-        data: [70],
-        backgroundColor: 'rgba(102, 255, 153, 0.8)',
-        borderRadius: 5,
-        barThickness: 30
-      }],
-      {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          x: {
-            grid: { display: false },
-            ticks: { font: { size: 12 } }
-          },
-          y: {
-            beginAtZero: true,
-            grid: { display: true },
-            ticks: { font: { size: 12 } }
-          }
-        },
-        plugins: { legend: { display: false } }
+makeChart(barRef, 'barChart', 'bar',
+  ['Water Level', 'Turbidity'],
+  [{
+    label: 'Wastewater Levels',
+    data: [
+      Math.floor(Math.random() * 100), // Sensor A
+      Math.floor(Math.random() * 100)  // Sensor B
+    ],
+    backgroundColor: [
+      'rgba(102, 255, 153, 0.8)', // Sensor A
+      'rgba(102, 153, 255, 0.8)'  // Sensor B
+    ],
+    borderRadius: 5,
+    barThickness: 30
+  }],
+  {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        grid: { display: false },
+        ticks: { font: { size: 12 } }
+      },
+      y: {
+        beginAtZero: true,
+        grid: { display: true },
+        ticks: { font: { size: 12 } }
       }
-    );
+    },
+    plugins: {
+      legend: { display: false }
+    }
+  }
+);
+
+
+
 
     return () => {
       Object.values(chartsRef.current).forEach(chart => chart.destroy());
@@ -124,21 +118,61 @@ const Dashboard = () => {
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      fetch('http://localhost:5000/api/ph')
-        .then(res => res.json())
-        .then(data => {
-          setPhValue(data.ph);
-          const t = new Date(data.timestamp * 1000);
-          setLastUpdated(t.toLocaleTimeString());
-          if (phTimeRef.current) {
-            phTimeRef.current.innerText = "Updated: " + t.toLocaleTimeString();
-          }
-        });
-    }, 2000);
+  const interval = setInterval(() => {
+    fetch('http://localhost:5000/api/ph')
+      .then(res => res.json())
+      .then(data => {
+        setPhValue(data.ph);
+        const t = new Date(data.timestamp * 1000);
+        const timeStr = t.toLocaleTimeString();
+        setLastUpdated(timeStr);
 
-    return () => clearInterval(interval);
-  }, []);
+        if (phTimeRef.current) {
+          phTimeRef.current.innerText = "Updated: " + timeStr;
+        }
+
+        const isCritical = data.ph < 6 || data.ph > 8.5;
+
+        // 👇 If pH is critical and alert not shown yet
+        if (isCritical && !phAlertShown) {
+          Swal.fire({
+            title: '⚠️ Abnormal pH Detected!',
+            html: `<strong>pH Level:</strong> ${data.ph.toFixed(2)}<br><strong>Time:</strong> ${timeStr}`,
+            icon: 'warning',
+            confirmButtonText: 'Acknowledge',
+            allowOutsideClick: false
+          }).then(() => {
+            setPhAlertShown(true); // don't show again unless pH recovers
+          });
+
+          // Add pH alert only if not already in notifications
+          setCustomNotifications(prev => {
+            const hasPH = prev.some(notif => notif.type === 'ph');
+            if (!hasPH) {
+              return [{
+                id: Date.now(),
+                type: 'ph',
+                icon: '/water.png',
+                title: 'Abnormal pH!',
+                message: `pH is ${data.ph.toFixed(2)} at ${timeStr}`
+              }, ...prev];
+            }
+            return prev;
+          });
+        }
+
+        // ✅ If pH returns to normal — reset alert flag
+        if (!isCritical && phAlertShown) {
+          setPhAlertShown(false);
+          // Optionally clear the pH notification if value goes normal
+          
+        }
+      });
+  }, 2000);
+
+  return () => clearInterval(interval);
+}, [phAlertShown]);
+
 
   const handleSensorClick = (sensorName) => {
     setSelectedSensor(sensorName);
@@ -202,7 +236,8 @@ const Dashboard = () => {
           <a href="#">Home</a>
           <a href="/reports">Reports</a>
           <a href="/settings">Settings</a>
-          <div className="notification-wrapper">
+          <div className={`notification-wrapper ${customNotifications.length > 0 ? 'has-alert' : ''}`}>
+
             <img
               src="/bell.jpg"
               className="icon"
@@ -211,14 +246,28 @@ const Dashboard = () => {
             />
             <div className={`notification-dropdown ${dropdownVisible ? 'show' : ''}`}>
               <div className="notif-message"><strong>NOTIFICATIONS</strong><hr /></div>
-              <div className="notification-item">
-                <img src="/water.png" className="notif-icon" />
-                <div className="notif-message"><strong>WARNING!!</strong><br />Water leak detected</div>
-              </div>
-              <div className="notification-item">
-                <img src="/water.png" className="notif-icon" />
-                <div className="notif-message"><strong>ALERT!!</strong><br />Pressure too high</div>
-              </div>
+              {customNotifications.length === 0 ? (
+                <>
+                  <div className="notification-item">
+                    <img src="/water.png" className="notif-icon" />
+                    <div className="notif-message"><strong>WARNING!!</strong><br />Water leak detected</div>
+                  </div>
+                  <div className="notification-item">
+                    <img src="/water.png" className="notif-icon" />
+                    <div className="notif-message"><strong>ALERT!!</strong><br />Pressure too high</div>
+                  </div>
+                </>
+              ) : (
+                customNotifications.map(notif => (
+                  <div key={notif.id} className="notification-item">
+                    <img src={notif.icon} className="notif-icon" />
+                    <div className="notif-message">
+                      <strong>{notif.title}</strong><br />
+                      {notif.message}
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
           </div>
           <img src="/settings.png" className="icon" alt="Settings" />

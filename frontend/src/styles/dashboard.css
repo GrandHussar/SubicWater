@@ -98,6 +98,23 @@
   position: relative;
 }
 
+.notification-wrapper::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: none;
+}
+
+.notification-wrapper.has-alert::after {
+  display: block;
+}
+
 .notification-dropdown {
   position: absolute;
   top: 30px;
@@ -112,10 +129,15 @@
   flex-direction: column;
   gap: 8px;
   z-index: 999;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .notification-dropdown.show {
   display: flex;
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .notification-item {
@@ -203,6 +225,24 @@
   margin-top: 3px;
 }
 
+/* === Critical Animation === */
+@keyframes alert-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(234, 66, 40, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(234, 66, 40, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(234, 66, 40, 0);
+  }
+}
+
+.live-ph-box.critical {
+  animation: alert-pulse 2s infinite;
+  border-color: #EA4228;
+}
+
 /* === TREND SECTION === */
 .trend-analysis {
   background-color: #eafaf1;
@@ -267,11 +307,12 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .sensor-button:hover {
   background-color: #4caf83;
+  box-shadow: 0 0 10px rgba(79, 195, 127, 0.6);
 }
 
 .sensor-detail-box {
@@ -308,3 +349,15 @@
 .back-button:hover {
   background-color: #618b6a;
 }
+
+.notification-wrapper.has-alert img.icon {
+  filter: drop-shadow(0 0 5px red);
+  animation: pingBell 1s infinite;
+}
+
+@keyframes pingBell {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+

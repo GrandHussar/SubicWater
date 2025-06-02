@@ -1,21 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import '../styles/dashboard.css';
+import TopBar from './Topbar'; // ✅ import reusable TopBar component
 
 const Reports = () => {
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [customNotifications, setCustomNotifications] = useState([]);
+
   return (
     <div>
-      <div className="top-bar">
-        <div className="top-left">
-          <img src="/logo.png" alt="Logo" />
-        </div>
-        <div className="top-center">Reports</div>
-        <div className="top-right">
-          <Link to="/#">Dashboard</Link>
-          <Link to="/reports">Reports</Link>
-          <Link to="#">Settings</Link>
-        </div>
-      </div>
+      <TopBar
+        customNotifications={customNotifications}
+        dropdownVisible={dropdownVisible}
+        setDropdownVisible={setDropdownVisible}
+        title="Reports" // ✅ sets "Reports" as top-center title
+      />
 
       <div className="spacer"></div>
 

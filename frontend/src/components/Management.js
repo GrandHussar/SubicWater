@@ -1,22 +1,29 @@
-import React from 'react';
-import '../styles/dashboard.css';
+import React, { useEffect, useState } from 'react';
 import '../styles/management.css';
-import logo from '../assets/logo.png';
+import TopBar from './Topbar';
 
-const SensorManagement = ({ sensors }) => {
+const Management = () => {
+  const [sensors, setSensors] = useState([]);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [customNotifications, setCustomNotifications] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/management', {
+      credentials: 'include',
+    })
+      .then(res => res.json())
+      .then(data => setSensors(data))
+      .catch(err => console.error('Failed to load sensors', err));
+  }, []);
+
   return (
     <div>
-      <div className="top-bar">
-        <div className="top-left">
-          <img src={logo} alt="Logo" />
-        </div>
-        <div className="top-center">Sensor Management</div>
-        <div className="top-right">
-          <a href="/dashboard">Dashboard</a>
-          <a href="/reports">Reports</a>
-          <a href="/settings">Settings</a>
-        </div>
-      </div>
+      <TopBar
+        title="Sensor Management"
+        customNotifications={customNotifications}
+        dropdownVisible={dropdownVisible}
+        setDropdownVisible={setDropdownVisible}
+      />
 
       <div className="spacer"></div>
 
@@ -25,13 +32,13 @@ const SensorManagement = ({ sensors }) => {
         <table>
           <thead>
             <tr>
-              <th>Sensor Name</th>
+              <th>Name</th>
               <th>Type</th>
               <th>Status</th>
             </tr>
           </thead>
           <tbody>
-            {sensors && sensors.map((sensor, index) => (
+            {sensors.map((sensor, index) => (
               <tr key={index}>
                 <td>{sensor.name}</td>
                 <td>{sensor.type}</td>
@@ -47,4 +54,4 @@ const SensorManagement = ({ sensors }) => {
   );
 };
 
-export default SensorManagement;
+export default Management;

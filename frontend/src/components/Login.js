@@ -22,6 +22,7 @@ function Login({ onLogin }) {
 
       const result = await res.json();
       if (result.success) {
+        localStorage.setItem("loggedIn", "true");
         onLogin();            // set loggedIn = true
         navigate('/');        // 👈 manually redirect to dashboard
       } else {

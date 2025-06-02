@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, jsonify
 
 management_bp = Blueprint('management', __name__)
 
@@ -12,4 +12,4 @@ def management():
         {"name": "Ultrasonic Sensor", "type": "Distance", "status": "Active"},
         {"name": "Color Recognition Sensor", "type": "Color", "status": "Active"}
     ]
-    return render_template("management.html", sensors=sensors)
+    return jsonify (sensors)

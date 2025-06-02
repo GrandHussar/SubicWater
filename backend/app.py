@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session
-from flask import jsonify   
+from flask import jsonify, make_response   
 from page.models import db, AllowedUser 
 from flask_cors import CORS
 import json
@@ -38,7 +38,24 @@ app.register_blueprint(management_bp)
 def get_ph():
     with open("ph_data.json") as f:
         data = json.load(f)
+    return jsonify(data)    
+
+@app.route('/api/distance')
+def get_distance():
+    with open("ultrasonic_data.json") as f:
+        data = json.load(f)
     return jsonify(data)
+
+@app.route('/api/color')
+def get_color():
+    try:
+        with open('color_data.json') as f:  # or 'data/color_data.json' if in subfolder
+            data = json.load(f)
+        return jsonify(data)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 
 # ✅ User model
 #class AllowedUser(db.Model):
@@ -59,12 +76,49 @@ def login():
         return jsonify({'success': True})
     return jsonify({'success': False}), 401
 
+@app.route('/logout', methods=['POST'])
+def logout():
+    session.pop('user', None)
+    return jsonify({'message': 'Logged out'}), 200
+
+@app.route('/api/data', methods=['POST'])
+def receive_data():
+    try:
+        data = request.get_json()
+        print("Received from ESP:", data)
+
+        # Optional: save to file for now
+        with open("esp_data.json", "w") as f:
+            json.dump(data, f)
+
+        return jsonify({"status": "received"}), 200
+    except Exception as e:
+        print("Error:", e)
+        return jsonify({"error": "Invalid data"}), 400
+
+@app.route('/api/esp', methods=['GET'])
+def get_esp_data():
+    with open('esp_data.json') as f:
+        data = json.load(f)
+    return jsonify(data)
+
+# ✅ App runner
+if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
+    app.run(debug=True, host='0.0.0.0', port=5000)
+
+
+
+
+
 
 # ✅ App runner
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
     app.run(debug=True)
+
 
 
 

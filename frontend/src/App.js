@@ -10,7 +10,11 @@ import Management from './components/Management';
 import axios from 'axios';
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  // ✅ Persist login using localStorage
+  const [loggedIn, setLoggedIn] = useState(() => {
+    return localStorage.getItem("loggedIn") === "true";
+  });
+
   const [phData, setPhData] = useState(null);
 
   useEffect(() => {
@@ -21,15 +25,33 @@ function App() {
     }
   }, [loggedIn]);
 
+  // ✅ Handle login success
+  const handleLogin = () => {
+    localStorage.setItem("loggedIn", "true");
+    setLoggedIn(true);
+  };
+
+  // ✅ Optional: handle logout
+  const handleLogout = () => {
+    localStorage.removeItem("loggedIn");
+    setLoggedIn(false);
+  };
+
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<Login onLogin={() => setLoggedIn(true)} />} />
+        <Route path="/login" element={<Login onLogin={handleLogin} />} />
         <Route path="/register" element={<Register />} />
+
+        {/* ✅ Only show dashboard if logged in */}
         <Route path="/" element={loggedIn ? <Dashboard phData={phData} /> : <Navigate to="/login" />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/management" element={<Management />} />
+        <Route path="/reports" element={loggedIn ? <Reports /> : <Navigate to="/login" />} />
+       <Route
+  path="/settings"
+  element={loggedIn ? <Settings onLogout={handleLogout} /> : <Navigate to="/login" />}
+/>
+
+        <Route path="/management" element={loggedIn ? <Management /> : <Navigate to="/login" />} />
       </Routes>
     </Router>
   );

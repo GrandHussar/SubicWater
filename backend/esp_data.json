@@ -1,1 +1,1057 @@
-{"pH": 6.0, "Turbidity": 198, "Flow": 4.2, "WaterLevel": 26.0, "Color": [136, 239, 110]}
+[
+  {
+    "pH": 6.8,
+    "Turbidity": 91,
+    "Flow": 7.3,
+    "WaterLevel": 23.0,
+    "Color": [
+      112,
+      230,
+      125
+    ]
+  },
+  {
+    "pH": 7.0,
+    "Turbidity": 138,
+    "Flow": 4.6,
+    "WaterLevel": 27.0,
+    "Color": [
+      199,
+      103,
+      120
+    ],
+    "timestamp": "2025-06-03T16:13:39.138431"
+  },
+  {
+    "pH": 7.3,
+    "Turbidity": 63,
+    "Flow": 1.1,
+    "WaterLevel": 25.0,
+    "Color": [
+      196,
+      185,
+      212
+    ],
+    "timestamp": "2025-06-03T16:13:44.330786"
+  },
+  {
+    "pH": 7.4,
+    "Turbidity": 276,
+    "Flow": 1.3,
+    "WaterLevel": 26.0,
+    "Color": [
+      229,
+      244,
+      121
+    ],
+    "timestamp": "2025-06-03T16:13:49.405945"
+  },
+  {
+    "pH": 7.1,
+    "Turbidity": 148,
+    "Flow": 2.7,
+    "WaterLevel": 15.0,
+    "Color": [
+      253,
+      220,
+      140
+    ],
+    "timestamp": "2025-06-03T16:13:54.530365"
+  },
+  {
+    "pH": 7.4,
+    "Turbidity": 238,
+    "Flow": 9.7,
+    "WaterLevel": 20.0,
+    "Color": [
+      169,
+      154,
+      253
+    ],
+    "timestamp": "2025-06-03T16:13:59.610392"
+  },
+  {
+    "pH": 6.7,
+    "Turbidity": 270,
+    "Flow": 1.3,
+    "WaterLevel": 19.0,
+    "Color": [
+      236,
+      180,
+      178
+    ],
+    "timestamp": "2025-06-03T16:14:04.650463"
+  },
+  {
+    "pH": 6.7,
+    "Turbidity": 253,
+    "Flow": 0.3,
+    "WaterLevel": 15.0,
+    "Color": [
+      123,
+      114,
+      134
+    ],
+    "timestamp": "2025-06-03T16:14:09.696390"
+  },
+  {
+    "pH": 6.6,
+    "Turbidity": 299,
+    "Flow": 9.2,
+    "WaterLevel": 28.0,
+    "Color": [
+      115,
+      210,
+      252
+    ],
+    "timestamp": "2025-06-03T16:14:14.729041"
+  },
+  {
+    "pH": 6.1,
+    "Turbidity": 143,
+    "Flow": 1.2,
+    "WaterLevel": 29.0,
+    "Color": [
+      145,
+      214,
+      224
+    ],
+    "timestamp": "2025-06-03T16:14:19.777809"
+  },
+  {
+    "pH": 6.3,
+    "Turbidity": 171,
+    "Flow": 1.0,
+    "WaterLevel": 17.0,
+    "Color": [
+      106,
+      125,
+      159
+    ],
+    "timestamp": "2025-06-03T16:14:24.829902"
+  },
+  {
+    "pH": 7.2,
+    "Turbidity": 168,
+    "Flow": 1.8,
+    "WaterLevel": 22.0,
+    "Color": [
+      116,
+      197,
+      135
+    ],
+    "timestamp": "2025-06-03T16:14:29.886507"
+  },
+  {
+    "pH": 7.0,
+    "Turbidity": 94,
+    "Flow": 4.3,
+    "WaterLevel": 29.0,
+    "Color": [
+      165,
+      111,
+      218
+    ],
+    "timestamp": "2025-06-03T16:14:34.925181"
+  },
+  {
+    "pH": 7.4,
+    "Turbidity": 218,
+    "Flow": 0.6,
+    "WaterLevel": 17.0,
+    "Color": [
+      122,
+      140,
+      127
+    ],
+    "timestamp": "2025-06-03T16:14:39.966971"
+  },
+  {
+    "pH": 7.2,
+    "Turbidity": 292,
+    "Flow": 1.1,
+    "WaterLevel": 16.0,
+    "Color": [
+      171,
+      114,
+      198
+    ],
+    "timestamp": "2025-06-03T16:14:45.023078"
+  },
+  {
+    "pH": 6.7,
+    "Turbidity": 156,
+    "Flow": 8.3,
+    "WaterLevel": 23.0,
+    "Color": [
+      233,
+      153,
+      164
+    ],
+    "timestamp": "2025-06-03T16:14:50.056155"
+  },
+  {
+    "pH": 6.0,
+    "Turbidity": 148,
+    "Flow": 6.6,
+    "WaterLevel": 22.0,
+    "Color": [
+      119,
+      160,
+      138
+    ],
+    "timestamp": "2025-06-03T16:14:55.184883"
+  },
+  {
+    "pH": 6.6,
+    "Turbidity": 276,
+    "Flow": 1.2,
+    "WaterLevel": 26.0,
+    "Color": [
+      146,
+      208,
+      177
+    ],
+    "timestamp": "2025-06-03T16:15:00.221165"
+  },
+  {
+    "pH": 6.4,
+    "Turbidity": 194,
+    "Flow": 6.5,
+    "WaterLevel": 28.0,
+    "Color": [
+      114,
+      125,
+      160
+    ],
+    "timestamp": "2025-06-03T16:15:05.386367"
+  },
+  {
+    "pH": 6.1,
+    "Turbidity": 231,
+    "Flow": 0.6,
+    "WaterLevel": 18.0,
+    "Color": [
+      132,
+      123,
+      202
+    ],
+    "timestamp": "2025-06-03T16:15:10.516588"
+  },
+  {
+    "pH": 6.3,
+    "Turbidity": 268,
+    "Flow": 4.2,
+    "WaterLevel": 27.0,
+    "Color": [
+      252,
+      148,
+      127
+    ],
+    "timestamp": "2025-06-03T16:15:15.596517"
+  },
+  {
+    "pH": 7.1,
+    "Turbidity": 253,
+    "Flow": 0.0,
+    "WaterLevel": 17.0,
+    "Color": [
+      112,
+      225,
+      148
+    ],
+    "timestamp": "2025-06-03T16:15:20.690608"
+  },
+  {
+    "pH": 7.3,
+    "Turbidity": 103,
+    "Flow": 3.2,
+    "WaterLevel": 16.0,
+    "Color": [
+      250,
+      238,
+      227
+    ],
+    "timestamp": "2025-06-03T16:15:25.744033"
+  },
+  {
+    "pH": 7.3,
+    "Turbidity": 117,
+    "Flow": 5.0,
+    "WaterLevel": 25.0,
+    "Color": [
+      137,
+      228,
+      186
+    ],
+    "timestamp": "2025-06-03T16:15:30.865790"
+  },
+  {
+    "pH": 6.6,
+    "Turbidity": 167,
+    "Flow": 3.6,
+    "WaterLevel": 25.0,
+    "Color": [
+      239,
+      242,
+      112
+    ],
+    "timestamp": "2025-06-03T16:15:35.947836"
+  },
+  {
+    "pH": 6.2,
+    "Turbidity": 288,
+    "Flow": 8.5,
+    "WaterLevel": 19.0,
+    "Color": [
+      165,
+      205,
+      246
+    ],
+    "timestamp": "2025-06-03T16:15:41.266599"
+  },
+  {
+    "pH": 7.0,
+    "Turbidity": 59,
+    "Flow": 1.3,
+    "WaterLevel": 24.0,
+    "Color": [
+      139,
+      201,
+      203
+    ],
+    "timestamp": "2025-06-03T16:15:46.402179"
+  },
+  {
+    "pH": 7.3,
+    "Turbidity": 247,
+    "Flow": 4.3,
+    "WaterLevel": 21.0,
+    "Color": [
+      246,
+      227,
+      236
+    ],
+    "timestamp": "2025-06-03T16:15:51.450283"
+  },
+  {
+    "pH": 7.2,
+    "Turbidity": 284,
+    "Flow": 5.0,
+    "WaterLevel": 16.0,
+    "Color": [
+      159,
+      106,
+      163
+    ],
+    "timestamp": "2025-06-03T16:15:56.499151"
+  },
+  {
+    "pH": 6.0,
+    "Turbidity": 108,
+    "Flow": 0.5,
+    "WaterLevel": 21.0,
+    "Color": [
+      250,
+      102,
+      216
+    ],
+    "timestamp": "2025-06-03T16:16:01.571420"
+  },
+  {
+    "pH": 7.0,
+    "Turbidity": 178,
+    "Flow": 0.6,
+    "WaterLevel": 24.0,
+    "Color": [
+      101,
+      143,
+      112
+    ],
+    "timestamp": "2025-06-03T16:16:06.691471"
+  },
+  {
+    "pH": 7.2,
+    "Turbidity": 275,
+    "Flow": 4.5,
+    "WaterLevel": 25.0,
+    "Color": [
+      109,
+      159,
+      161
+    ],
+    "timestamp": "2025-06-03T16:16:11.727751"
+  },
+  {
+    "pH": 6.2,
+    "Turbidity": 160,
+    "Flow": 4.3,
+    "WaterLevel": 23.0,
+    "Color": [
+      233,
+      144,
+      157
+    ],
+    "timestamp": "2025-06-03T16:16:16.787759"
+  },
+  {
+    "pH": 6.8,
+    "Turbidity": 149,
+    "Flow": 5.9,
+    "WaterLevel": 23.0,
+    "Color": [
+      188,
+      108,
+      232
+    ],
+    "timestamp": "2025-06-03T16:16:21.863400"
+  },
+  {
+    "pH": 7.1,
+    "Turbidity": 296,
+    "Flow": 9.3,
+    "WaterLevel": 29.0,
+    "Color": [
+      172,
+      144,
+      179
+    ],
+    "timestamp": "2025-06-03T16:16:26.903100"
+  },
+  {
+    "pH": 6.7,
+    "Turbidity": 221,
+    "Flow": 0.5,
+    "WaterLevel": 16.0,
+    "Color": [
+      138,
+      197,
+      181
+    ],
+    "timestamp": "2025-06-03T16:16:31.963771"
+  },
+  {
+    "pH": 6.3,
+    "Turbidity": 177,
+    "Flow": 4.5,
+    "WaterLevel": 24.0,
+    "Color": [
+      147,
+      137,
+      225
+    ],
+    "timestamp": "2025-06-03T16:16:37.019388"
+  },
+  {
+    "pH": 6.6,
+    "Turbidity": 283,
+    "Flow": 8.0,
+    "WaterLevel": 15.0,
+    "Color": [
+      215,
+      181,
+      134
+    ],
+    "timestamp": "2025-06-03T16:16:42.215404"
+  },
+  {
+    "pH": 6.4,
+    "Turbidity": 217,
+    "Flow": 2.8,
+    "WaterLevel": 26.0,
+    "Color": [
+      186,
+      230,
+      134
+    ],
+    "timestamp": "2025-06-03T16:16:47.433189"
+  },
+  {
+    "pH": 6.1,
+    "Turbidity": 202,
+    "Flow": 4.3,
+    "WaterLevel": 15.0,
+    "Color": [
+      239,
+      205,
+      163
+    ],
+    "timestamp": "2025-06-03T16:16:52.480465"
+  },
+  {
+    "pH": 7.3,
+    "Turbidity": 224,
+    "Flow": 4.0,
+    "WaterLevel": 23.0,
+    "Color": [
+      109,
+      125,
+      254
+    ],
+    "timestamp": "2025-06-03T16:16:57.541170"
+  },
+  {
+    "pH": 6.2,
+    "Turbidity": 168,
+    "Flow": 3.5,
+    "WaterLevel": 22.0,
+    "Color": [
+      140,
+      139,
+      216
+    ],
+    "timestamp": "2025-06-03T16:17:02.585284"
+  },
+  {
+    "pH": 6.0,
+    "Turbidity": 225,
+    "Flow": 6.6,
+    "WaterLevel": 19.0,
+    "Color": [
+      135,
+      149,
+      208
+    ],
+    "timestamp": "2025-06-03T16:17:07.642544"
+  },
+  {
+    "pH": 7.2,
+    "Turbidity": 93,
+    "Flow": 0.5,
+    "WaterLevel": 20.0,
+    "Color": [
+      151,
+      194,
+      220
+    ],
+    "timestamp": "2025-06-03T16:17:12.755050"
+  },
+  {
+    "pH": 6.2,
+    "Turbidity": 211,
+    "Flow": 6.8,
+    "WaterLevel": 25.0,
+    "Color": [
+      244,
+      105,
+      143
+    ],
+    "timestamp": "2025-06-03T16:17:18.134306"
+  },
+  {
+    "pH": 7.4,
+    "Turbidity": 72,
+    "Flow": 0.9,
+    "WaterLevel": 21.0,
+    "Color": [
+      243,
+      100,
+      158
+    ],
+    "timestamp": "2025-06-03T16:17:23.362883"
+  },
+  {
+    "pH": 6.5,
+    "Turbidity": 273,
+    "Flow": 9.2,
+    "WaterLevel": 21.0,
+    "Color": [
+      164,
+      226,
+      182
+    ],
+    "timestamp": "2025-06-03T16:17:28.502120"
+  },
+  {
+    "pH": 7.4,
+    "Turbidity": 133,
+    "Flow": 9.4,
+    "WaterLevel": 28.0,
+    "Color": [
+      159,
+      172,
+      167
+    ],
+    "timestamp": "2025-06-03T16:17:33.771556"
+  },
+  {
+    "pH": 7.0,
+    "Turbidity": 63,
+    "Flow": 1.9,
+    "WaterLevel": 15.0,
+    "Color": [
+      116,
+      231,
+      116
+    ],
+    "timestamp": "2025-06-03T16:17:39.044852"
+  },
+  {
+    "pH": 6.7,
+    "Turbidity": 144,
+    "Flow": 3.9,
+    "WaterLevel": 21.0,
+    "Color": [
+      148,
+      147,
+      218
+    ],
+    "timestamp": "2025-06-03T16:17:44.341346"
+  },
+  {
+    "pH": 6.3,
+    "Turbidity": 275,
+    "Flow": 6.5,
+    "WaterLevel": 28.0,
+    "Color": [
+      223,
+      109,
+      145
+    ],
+    "timestamp": "2025-06-03T16:17:49.487287"
+  },
+  {
+    "pH": 6.0,
+    "Turbidity": 267,
+    "Flow": 4.5,
+    "WaterLevel": 24.0,
+    "Color": [
+      212,
+      179,
+      159
+    ],
+    "timestamp": "2025-06-03T16:17:54.801513"
+  },
+  {
+    "pH": 6.0,
+    "Turbidity": 69,
+    "Flow": 6.1,
+    "WaterLevel": 19.0,
+    "Color": [
+      156,
+      196,
+      127
+    ],
+    "timestamp": "2025-06-03T16:18:00.084295"
+  },
+  {
+    "pH": 6.3,
+    "Turbidity": 263,
+    "Flow": 8.0,
+    "WaterLevel": 23.0,
+    "Color": [
+      240,
+      202,
+      225
+    ],
+    "timestamp": "2025-06-03T16:18:05.228107"
+  },
+  {
+    "pH": 6.3,
+    "Turbidity": 159,
+    "Flow": 6.1,
+    "WaterLevel": 16.0,
+    "Color": [
+      163,
+      236,
+      133
+    ],
+    "timestamp": "2025-06-03T16:18:10.410128"
+  },
+  {
+    "pH": 7.4,
+    "Turbidity": 268,
+    "Flow": 1.1,
+    "WaterLevel": 17.0,
+    "Color": [
+      243,
+      234,
+      103
+    ],
+    "timestamp": "2025-06-03T16:18:15.619024"
+  },
+  {
+    "pH": 7.3,
+    "Turbidity": 208,
+    "Flow": 5.0,
+    "WaterLevel": 20.0,
+    "Color": [
+      163,
+      124,
+      234
+    ],
+    "timestamp": "2025-06-03T16:18:20.854804"
+  },
+  {
+    "pH": 7.4,
+    "Turbidity": 129,
+    "Flow": 2.8,
+    "WaterLevel": 20.0,
+    "Color": [
+      205,
+      228,
+      130
+    ],
+    "timestamp": "2025-06-03T16:18:26.104749"
+  },
+  {
+    "pH": 7.1,
+    "Turbidity": 295,
+    "Flow": 2.2,
+    "WaterLevel": 18.0,
+    "Color": [
+      247,
+      112,
+      180
+    ],
+    "timestamp": "2025-06-03T16:18:34.248558"
+  },
+  {
+    "pH": 6.8,
+    "Turbidity": 205,
+    "Flow": 3.6,
+    "WaterLevel": 26.0,
+    "Color": [
+      225,
+      137,
+      193
+    ],
+    "timestamp": "2025-06-03T16:18:39.442175"
+  },
+  {
+    "pH": 7.0,
+    "Turbidity": 54,
+    "Flow": 8.1,
+    "WaterLevel": 17.0,
+    "Color": [
+      107,
+      133,
+      175
+    ],
+    "timestamp": "2025-06-03T16:18:44.576080"
+  },
+  {
+    "pH": 6.6,
+    "Turbidity": 262,
+    "Flow": 9.9,
+    "WaterLevel": 27.0,
+    "Color": [
+      201,
+      236,
+      243
+    ],
+    "timestamp": "2025-06-03T16:18:49.700579"
+  },
+  {
+    "pH": 6.6,
+    "Turbidity": 209,
+    "Flow": 1.2,
+    "WaterLevel": 19.0,
+    "Color": [
+      184,
+      100,
+      207
+    ],
+    "timestamp": "2025-06-03T16:18:54.901418"
+  },
+  {
+    "pH": 6.7,
+    "Turbidity": 148,
+    "Flow": 3.8,
+    "WaterLevel": 22.0,
+    "Color": [
+      215,
+      116,
+      236
+    ],
+    "timestamp": "2025-06-03T16:19:00.023583"
+  },
+  {
+    "pH": 7.3,
+    "Turbidity": 172,
+    "Flow": 6.4,
+    "WaterLevel": 26.0,
+    "Color": [
+      138,
+      129,
+      118
+    ],
+    "timestamp": "2025-06-03T16:19:05.140342"
+  },
+  {
+    "pH": 6.9,
+    "Turbidity": 53,
+    "Flow": 7.0,
+    "WaterLevel": 21.0,
+    "Color": [
+      111,
+      190,
+      185
+    ],
+    "timestamp": "2025-06-03T16:19:10.342122"
+  },
+  {
+    "pH": 6.4,
+    "Turbidity": 279,
+    "Flow": 7.2,
+    "WaterLevel": 16.0,
+    "Color": [
+      248,
+      108,
+      142
+    ],
+    "timestamp": "2025-06-03T16:19:15.580513"
+  },
+  {
+    "pH": 6.0,
+    "Turbidity": 150,
+    "Flow": 4.2,
+    "WaterLevel": 16.0,
+    "Color": [
+      163,
+      197,
+      204
+    ],
+    "timestamp": "2025-06-03T16:19:20.710664"
+  },
+  {
+    "pH": 7.4,
+    "Turbidity": 237,
+    "Flow": 2.5,
+    "WaterLevel": 20.0,
+    "Color": [
+      248,
+      175,
+      112
+    ],
+    "timestamp": "2025-06-03T16:19:25.776942"
+  },
+  {
+    "pH": 7.0,
+    "Turbidity": 100,
+    "Flow": 8.4,
+    "WaterLevel": 28.0,
+    "Color": [
+      144,
+      154,
+      116
+    ],
+    "timestamp": "2025-06-03T16:19:30.848617"
+  },
+  {
+    "pH": 6.8,
+    "Turbidity": 281,
+    "Flow": 9.5,
+    "WaterLevel": 15.0,
+    "Color": [
+      250,
+      120,
+      121
+    ],
+    "timestamp": "2025-06-03T16:19:35.971627"
+  },
+  {
+    "pH": 7.4,
+    "Turbidity": 276,
+    "Flow": 5.3,
+    "WaterLevel": 23.0,
+    "Color": [
+      185,
+      123,
+      243
+    ],
+    "timestamp": "2025-06-03T16:19:41.092834"
+  },
+  {
+    "pH": 7.3,
+    "Turbidity": 276,
+    "Flow": 5.9,
+    "WaterLevel": 20.0,
+    "Color": [
+      158,
+      175,
+      143
+    ],
+    "timestamp": "2025-06-03T16:19:46.198464"
+  },
+  {
+    "pH": 6.5,
+    "Turbidity": 228,
+    "Flow": 0.1,
+    "WaterLevel": 18.0,
+    "Color": [
+      177,
+      220,
+      131
+    ],
+    "timestamp": "2025-06-03T16:19:51.240915"
+  },
+  {
+    "pH": 6.9,
+    "Turbidity": 205,
+    "Flow": 5.6,
+    "WaterLevel": 24.0,
+    "Color": [
+      235,
+      158,
+      187
+    ],
+    "timestamp": "2025-06-03T16:19:56.358352"
+  },
+  {
+    "pH": 7.1,
+    "Turbidity": 89,
+    "Flow": 5.3,
+    "WaterLevel": 23.0,
+    "Color": [
+      225,
+      248,
+      139
+    ],
+    "timestamp": "2025-06-03T16:20:01.471287"
+  },
+  {
+    "pH": 7.3,
+    "Turbidity": 132,
+    "Flow": 0.4,
+    "WaterLevel": 20.0,
+    "Color": [
+      195,
+      240,
+      230
+    ],
+    "timestamp": "2025-06-03T16:20:06.675231"
+  },
+  {
+    "pH": 6.5,
+    "Turbidity": 161,
+    "Flow": 0.6,
+    "WaterLevel": 15.0,
+    "Color": [
+      120,
+      222,
+      225
+    ],
+    "timestamp": "2025-06-03T16:20:11.993741"
+  },
+  {
+    "pH": 6.6,
+    "Turbidity": 81,
+    "Flow": 0.2,
+    "WaterLevel": 28.0,
+    "Color": [
+      159,
+      246,
+      142
+    ],
+    "timestamp": "2025-06-03T16:20:17.329316"
+  },
+  {
+    "pH": 6.5,
+    "Turbidity": 260,
+    "Flow": 9.5,
+    "WaterLevel": 16.0,
+    "Color": [
+      254,
+      251,
+      149
+    ],
+    "timestamp": "2025-06-03T16:20:22.540024"
+  },
+  {
+    "pH": 6.9,
+    "Turbidity": 93,
+    "Flow": 6.0,
+    "WaterLevel": 16.0,
+    "Color": [
+      167,
+      171,
+      163
+    ],
+    "timestamp": "2025-06-03T16:20:27.578125"
+  },
+  {
+    "pH": 6.5,
+    "Turbidity": 95,
+    "Flow": 9.2,
+    "WaterLevel": 19.0,
+    "Color": [
+      171,
+      160,
+      110
+    ],
+    "timestamp": "2025-06-03T16:20:32.795738"
+  },
+  {
+    "pH": 6.0,
+    "Turbidity": 137,
+    "Flow": 2.7,
+    "WaterLevel": 17.0,
+    "Color": [
+      180,
+      183,
+      207
+    ],
+    "timestamp": "2025-06-03T16:20:37.996984"
+  },
+  {
+    "pH": 7.2,
+    "Turbidity": 267,
+    "Flow": 8.2,
+    "WaterLevel": 19.0,
+    "Color": [
+      254,
+      173,
+      167
+    ],
+    "timestamp": "2025-06-03T16:20:43.050962"
+  },
+  {
+    "pH": 7.1,
+    "Turbidity": 293,
+    "Flow": 7.3,
+    "WaterLevel": 28.0,
+    "Color": [
+      147,
+      213,
+      197
+    ],
+    "timestamp": "2025-06-03T16:20:48.171815"
+  },
+  {
+    "pH": 6.7,
+    "Turbidity": 143,
+    "Flow": 9.4,
+    "WaterLevel": 17.0,
+    "Color": [
+      183,
+      221,
+      128
+    ],
+    "timestamp": "2025-06-03T16:20:53.277614"
+  },
+  {
+    "pH": 6.1,
+    "Turbidity": 78,
+    "Flow": 7.4,
+    "WaterLevel": 27.0,
+    "Color": [
+      141,
+      220,
+      187
+    ],
+    "timestamp": "2025-06-03T16:20:58.394157"
+  },
+  {
+    "pH": 6.3,
+    "Turbidity": 183,
+    "Flow": 9.2,
+    "WaterLevel": 22.0,
+    "Color": [
+      123,
+      180,
+      231
+    ],
+    "timestamp": "2025-06-03T16:21:03.427114"
+  }
+]

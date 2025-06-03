@@ -200,7 +200,7 @@
   border: 2px solid #6fcf97;
   border-radius: 8px;
   padding: 5px;
-  width: 60%;
+  width: 95%;
   text-align: center;
   font-size: 12px;
   display: flex;
@@ -210,7 +210,7 @@
 }
 
 .live-ph-box svg {
-  transform: scale(0.5);
+  transform: scale(0.9);
 }
 
 .ph-number {
@@ -433,4 +433,17 @@
 .color-sensor-panel h3 {
   font-size: 18px;
   color: #1e3a8a;
+}
+
+/* Temperature chart container */
+.temperature-chart-container {
+  background-color: #000;         /* Black background */
+  padding: 10px;
+  border-radius: 10px;
+  height: 200px;
+}
+
+/* Chart.js canvas tweaks inside */
+.temperature-chart-container canvas {
+  background-color: #000;         /* Ensure canvas has black bg */
 }

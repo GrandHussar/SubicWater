@@ -1,73 +1,66 @@
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
+import '../styles/dashboard.css';
 
 const Temperature = ({ data }) => {
-  const chartRef = useRef(null);
-  const canvasRef = useRef(null);
+  const tempRef = useRef(null);
+  const chartInstance = useRef(null);
 
   useEffect(() => {
-    if (!canvasRef.current) return;
-
-    if (chartRef.current) {
-      chartRef.current.destroy();
-    }
-
-    chartRef.current = new Chart(canvasRef.current, {
-      type: 'line',
-      data: {
-        labels: data.map((_, i) => `T-${data.length - i}`),
-        datasets: [{
-          label: 'Room Temperature (°C)',
-          data: data,
-          borderColor: '#00E0FF',
-          backgroundColor: 'rgba(0, 224, 255, 0.1)',
-          tension: 0.4,
-          borderWidth: 2,
-          pointRadius: 0
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          x: {
-            display: false
+    if (tempRef.current) {
+      if (chartInstance.current) {
+        chartInstance.current.data.labels = data.map((_, i) => i + 1);
+        chartInstance.current.data.datasets[0].data = data;
+        chartInstance.current.update(); // smooth update
+      } else {
+        chartInstance.current = new Chart(tempRef.current, {
+          type: 'line',
+          data: {
+            labels: data.map((_, i) => i + 1),
+            datasets: [
+              {
+                label: 'Temperature °C',
+                data,
+                backgroundColor: 'rgb(15, 2, 5)',
+                borderColor: 'rgb(99, 125, 255)',
+                borderWidth: 2,
+                tension: 0.4,
+                pointRadius: 0,
+              }
+            ]
           },
-          y: {
-            beginAtZero: false,
-            min: 10,
-            max: 40,
-            ticks: {
-              stepSize: 2,
-              color: '#ccc'
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: {
+              duration: 500,
+              easing: 'easeOutCubic'
             },
-            grid: {
-              color: 'rgba(255,255,255,0.05)'
+            plugins: {
+              legend: { display: true }
+            },
+            scales: {
+              x: {
+                display: true,
+                title: { display: true, text: 'Time' }
+              },
+              y: {
+                beginAtZero: true,
+                title: { display: true, text: 'Temp (°C)' }
+              }
             }
           }
-        },
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            callbacks: {
-              label: ctx => `Temp: ${ctx.raw.toFixed(1)} °C`
-            }
-          }
-        }
+        });
       }
-    });
-
-    return () => {
-      if (chartRef.current) chartRef.current.destroy();
-    };
+    }
   }, [data]);
 
   return (
-    <div className="temperature-chart-panel" style={{ height: 120, padding: 10, background: '#101010', borderRadius: 8 }}>
-      <h3 style={{ color: '#00E0FF', marginBottom: 8 }}>Temperature (Last Readings)</h3>
-      <canvas ref={canvasRef}></canvas>
-    </div>
-  );
+  <div className="temperature-chart-container">
+    <canvas ref={tempRef}></canvas>
+  </div>
+);
+
 };
 
 export default Temperature;

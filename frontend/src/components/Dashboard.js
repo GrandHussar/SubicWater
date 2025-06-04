@@ -6,7 +6,6 @@ import Swal from 'sweetalert2';
 import TopBar from './Topbar';
 import WastewaterChart from './WasteWater';
 import ColorSensor from './ColorSensor';
-import Temperature from './Temperature';
 
 const Dashboard = () => {
   const chartsRef = useRef({});
@@ -26,7 +25,6 @@ const Dashboard = () => {
   const [colorName, setColorName] = useState('Unknown');
   const [colorUpdated, setColorUpdated] = useState('');
   const [turbidity, setTurbidity] = useState(0);
-  const [temperatureData, setTemperatureData] = useState([]);
 
   useEffect(() => {
     const destroyChart = (id) => {
@@ -124,28 +122,38 @@ const Dashboard = () => {
       fetch('http://localhost:5000/api/esp')
         .then(res => res.json())
         .then(data => {
-          setPhValue(data.pH);
+          if (typeof data.pH === 'number' && !isNaN(data.pH)) {
+  setPhValue(data.pH);
+}
+
+
           setDistance(data.WaterLevel);
           setTurbidity(data.Turbidity);
 
-          const [r, g, b] = data.Color || [255, 255, 255];
-          const hex = `#${[r, g, b].map(x => x.toString(16).padStart(2, '0')).join('')}`.toUpperCase();
+        const [r, g, b] = data.Color || [255, 255, 255];
+const hex = `#${[r, g, b].map(x => x.toString(16).padStart(2, '0')).join('')}`.toUpperCase();
 
-          let condition = 'Unknown';
-          if (r > 200 && g > 200 && b > 200) condition = 'Clean';
-          else if (r > 150 && g > 150 && b > 150) condition = 'Slightly Dirty';
-          else if (r > 100 && g > 100 && b > 100) condition = 'Muddy';
-          else condition = 'Very Dirty';
+let condition = 'Unknown';
 
+if (r === 0 && g === 0 && b === 255) {
+  condition = 'Clean';
+} else if (r === 0 && g === 255 && b === 0) {
+  condition = 'Algae';
+} else if (r === 255 && g === 0 && b === 0) {
+  condition = 'Abnormal PH';
+} else if (r === 255 && g === 255 && b === 0) {
+  condition = 'Slightly Dirty'; // Yellow
+}
+
+console.log(`RGB: [${r}, ${g}, ${b}] - ${condition}`);
+
+          
           setColorHex(hex);
           setColorName(condition);
 
           const timeStr = new Date().toLocaleTimeString();
           setLastUpdated(timeStr);
           setColorUpdated(timeStr);
-
-          const randomTemp = 20 + Math.random() * 4;
-          setTemperatureData(prev => [...prev.slice(-29), randomTemp]);
 
           if (phTimeRef.current) phTimeRef.current.innerText = 'Updated: ' + timeStr;
 
@@ -183,9 +191,7 @@ const Dashboard = () => {
 
   const handleSensorClick = (sensorName) => setSelectedSensor(sensorName);
 
-  const sensors = [
-   
-  ];
+  const sensors = [];
 
   const renderSensorMap = () => {
     if (selectedSensor === 'main') {
@@ -197,7 +203,32 @@ const Dashboard = () => {
             ))}
           </div>
 
-          <Temperature data={temperatureData} animate />
+          {/* Replaced Temperature component with Live Sensor Status box */}
+          <div className="sensor-status-industrial">
+  <div className="sensor-status-header">Live Sensor Status</div>
+  <div className="sensor-status-row">
+    <span className="label">💧 Water Level</span>
+    <span className="value">{distance} cm</span>
+  </div>
+  <div className="sensor-status-row">
+    <span className="label">🎨 Color</span>
+    <span className="value">{colorName}</span>
+  </div>
+  <div className="sensor-status-row">
+    <span className="label">🧪 pH Level</span>
+    <span className="value">{phValue.toFixed(2)}</span>
+  </div>
+  <div className="sensor-status-row">
+    <span className="label">🌫️ Turbidity</span>
+    <span className="value">{turbidity}</span>
+  </div>
+  <div className="sensor-status-row last">
+    <span className="label">⏱️ Last Updated</span>
+    <span className="value">{lastUpdated}</span>
+  </div>
+</div>
+
+
 
           <div style={{ display: 'flex', gap: '20px', marginTop: '20px' }}>
             <div className="ultrasonic-status-panel" style={{ flex: 1 }}>
@@ -217,7 +248,7 @@ const Dashboard = () => {
                   ></div>
                 </div>
               </div>
-              <p>Status: {distance < 50 ? '🚧 Obstacle Detected' : '✅ Clear'}</p>
+              <p>Status: {distance < 50 ? '🟢 Water within Range' : '✅ Clear'}</p>
               <p>Last updated: {lastUpdated}</p>
             </div>
 
@@ -254,7 +285,7 @@ const Dashboard = () => {
             />
             <div className="ph-time" ref={phTimeRef}>{lastUpdated ? `Updated: ${lastUpdated}` : 'Waiting...'}</div>
           </div>
-          
+
           <a href="/management" className="sensor-management-link">
             <div className="sensor-management">Sensor Management →</div>
           </a>

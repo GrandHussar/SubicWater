@@ -51,7 +51,7 @@ const Reports = () => {
           >
             XML
           </a>
-          &nbsp;| PDF
+       
         </td>
       </tr>
   ))}

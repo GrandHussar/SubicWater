@@ -77,9 +77,7 @@ def export_xml():
         with open("esp_data.json", "r") as f:
             data = json.load(f)
 
-        # Build XML
         root = ET.Element("SensorData")
-
         for entry in data:
             record = ET.SubElement(root, "Record")
             for key, value in entry.items():
@@ -104,7 +102,6 @@ def receive_data():
 
         group_file = "esp_groups.json"
 
-        # Load existing groups
         if os.path.exists(group_file):
             with open(group_file, "r") as f:
                 try:
@@ -114,7 +111,6 @@ def receive_data():
         else:
             groups = []
 
-        # First group ever
         if not groups:
             new_group = {
                 "id": 1,
@@ -128,10 +124,8 @@ def receive_data():
             group_end = datetime.fromisoformat(last_group["end_time"])
 
             if now < group_end:
-                # Append to last group
                 last_group["records"].append(data)
             else:
-                # Create new group
                 new_group = {
                     "id": last_group["id"] + 1,
                     "start_time": now.isoformat(),
@@ -140,7 +134,6 @@ def receive_data():
                 }
                 groups.append(new_group)
 
-        # Save back to file
         with open(group_file, "w") as f:
             json.dump(groups, f, indent=2)
 
@@ -158,7 +151,7 @@ def get_grouped_data():
         return jsonify(data)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-    
+
 @app.route('/api/export/xml/<int:group_id>', methods=['GET'])
 def export_xml_group(group_id):
     try:
@@ -169,7 +162,6 @@ def export_xml_group(group_id):
         if not group:
             return jsonify({"error": "Group not found"}), 404
 
-        # Start XML
         root = ET.Element("SensorGroup")
         ET.SubElement(root, "GroupID").text = str(group["id"])
         ET.SubElement(root, "StartTime").text = group["start_time"]
@@ -178,20 +170,15 @@ def export_xml_group(group_id):
         records_elem = ET.SubElement(root, "Records")
         for record in group["records"]:
             record_elem = ET.SubElement(records_elem, "Record")
-            
             ET.SubElement(record_elem, "PH").text = str(record.get("pH", ""))
             ET.SubElement(record_elem, "Turbidity").text = str(record.get("Turbidity", ""))
             ET.SubElement(record_elem, "Flow").text = str(record.get("Flow", ""))
             ET.SubElement(record_elem, "WaterLevel").text = str(record.get("WaterLevel", ""))
-            
-            # Format color nicely
             color = record.get("Color", [])
             color_text = ", ".join(map(str, color)) if isinstance(color, list) else str(color)
             ET.SubElement(record_elem, "ColorRGB").text = color_text
-            
             ET.SubElement(record_elem, "Timestamp").text = record.get("timestamp", "")
 
-        # Convert and prettify XML
         xml_data = ET.tostring(root, encoding='utf-8')
         from xml.dom import minidom
         pretty_xml = minidom.parseString(xml_data).toprettyxml(indent="  ")
@@ -203,14 +190,26 @@ def export_xml_group(group_id):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-
-
-# ✅ RETURN MOST RECENT ESP DATA ENTRY
+# ✅ RETURN LATEST RECORD FROM LATEST GROUP
 @app.route('/api/esp', methods=['GET'])
 def get_esp_data():
-    with open('esp_data.json') as f:
-        data = json.load(f)
-    return jsonify(data[-1])  # Only send the latest record
+    try:
+        with open('esp_groups.json') as f:
+            groups = json.load(f)
+
+        if not groups:
+            return jsonify({"error": "No data available"}), 404
+
+        latest_group = groups[-1]
+        records = latest_group.get("records", [])
+
+        if not records:
+            return jsonify({"error": "No records in latest group"}), 404
+
+        return jsonify(records[-1])  # Return the latest record from the latest group
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 # ✅ Run App
 if __name__ == '__main__':

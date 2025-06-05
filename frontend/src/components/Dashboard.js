@@ -122,15 +122,15 @@ const Dashboard = () => {
       fetch('http://localhost:5000/api/esp')
         .then(res => res.json())
         .then(data => {
-          if (typeof data.pH === 'number' && !isNaN(data.pH)) {
-  setPhValue(data.pH);
+          if (typeof data.ph === 'number' && !isNaN(data.ph)) {
+  setPhValue(data.ph);
 }
 
 
-          setDistance(data.WaterLevel);
-          setTurbidity(data.Turbidity);
+          setDistance(data.water_level);
+          setTurbidity(data.turbidity);
 
-        const [r, g, b] = data.Color || [255, 255, 255];
+        const [r, g, b] = data.color || [255, 255, 255];
 const hex = `#${[r, g, b].map(x => x.toString(16).padStart(2, '0')).join('')}`.toUpperCase();
 
 let condition = 'Unknown';

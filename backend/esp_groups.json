@@ -21959,5 +21959,1224 @@
         "timestamp": "2025-06-04T15:13:11.118088"
       }
     ]
+  },
+  {
+    "id": 20,
+    "start_time": "2025-06-05T12:31:34.544318",
+    "end_time": "2025-06-05T12:41:34.544318",
+    "records": [
+      {
+        "type": "response",
+        "ph": 4.095133,
+        "turbidity": 522,
+        "water_level": 5.17959,
+        "color": [
+          174,
+          164,
+          183
+        ],
+        "timestamp": "2025-06-05T12:31:34.544318"
+      },
+      {
+        "type": "response",
+        "ph": 5.571672,
+        "turbidity": 443,
+        "water_level": 6.230099,
+        "color": [
+          167,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:31:40.079565"
+      },
+      {
+        "type": "response",
+        "ph": 5.822404,
+        "turbidity": 436,
+        "water_level": 6.58339,
+        "color": [
+          167,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:31:45.893576"
+      },
+      {
+        "type": "response",
+        "ph": 5.710968,
+        "turbidity": 436,
+        "water_level": 6.360438,
+        "color": [
+          167,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:31:52.800570"
+      },
+      {
+        "type": "response",
+        "ph": 5.766686,
+        "turbidity": 435,
+        "water_level": 6.473631,
+        "color": [
+          166,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:31:58.884659"
+      },
+      {
+        "type": "response",
+        "ph": 5.738828,
+        "turbidity": 436,
+        "water_level": 6.49078,
+        "color": [
+          167,
+          165,
+          186
+        ],
+        "timestamp": "2025-06-05T12:32:04.649175"
+      },
+      {
+        "type": "response",
+        "ph": 5.822404,
+        "turbidity": 434,
+        "water_level": 6.70001,
+        "color": [
+          167,
+          165,
+          186
+        ],
+        "timestamp": "2025-06-05T12:32:10.333917"
+      },
+      {
+        "type": "response",
+        "ph": 5.738828,
+        "turbidity": 438,
+        "water_level": 6.494211,
+        "color": [
+          174,
+          164,
+          187
+        ],
+        "timestamp": "2025-06-05T12:32:16.163469"
+      },
+      {
+        "type": "response",
+        "ph": 5.794546,
+        "turbidity": 436,
+        "water_level": 6.538799,
+        "color": [
+          166,
+          165,
+          186
+        ],
+        "timestamp": "2025-06-05T12:32:21.789926"
+      },
+      {
+        "type": "response",
+        "ph": 5.738828,
+        "turbidity": 437,
+        "water_level": 6.494211,
+        "color": [
+          167,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:32:27.637291"
+      },
+      {
+        "type": "response",
+        "ph": 5.850265,
+        "turbidity": 434,
+        "water_level": 6.35358,
+        "color": [
+          174,
+          172,
+          187
+        ],
+        "timestamp": "2025-06-05T12:32:33.434199"
+      },
+      {
+        "type": "response",
+        "ph": 5.822404,
+        "turbidity": 434,
+        "water_level": 6.432468,
+        "color": [
+          167,
+          165,
+          196
+        ],
+        "timestamp": "2025-06-05T12:32:39.575510"
+      },
+      {
+        "type": "response",
+        "ph": 5.710968,
+        "turbidity": 437,
+        "water_level": 6.44276,
+        "color": [
+          166,
+          165,
+          186
+        ],
+        "timestamp": "2025-06-05T12:32:45.205001"
+      },
+      {
+        "type": "response",
+        "ph": 5.766686,
+        "turbidity": 437,
+        "water_level": 6.230101,
+        "color": [
+          170,
+          166,
+          187
+        ],
+        "timestamp": "2025-06-05T12:32:50.865830"
+      },
+      {
+        "type": "response",
+        "ph": 5.710968,
+        "turbidity": 438,
+        "water_level": 6.329571,
+        "color": [
+          167,
+          165,
+          186
+        ],
+        "timestamp": "2025-06-05T12:32:56.734139"
+      },
+      {
+        "type": "response",
+        "ph": 5.766686,
+        "turbidity": 436,
+        "water_level": 5.042393,
+        "color": [
+          167,
+          164,
+          187
+        ],
+        "timestamp": "2025-06-05T12:33:02.502584"
+      },
+      {
+        "type": "response",
+        "ph": 5.710968,
+        "turbidity": 437,
+        "water_level": 6.370731,
+        "color": [
+          167,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:33:08.156023"
+      },
+      {
+        "type": "response",
+        "ph": 5.822404,
+        "turbidity": 435,
+        "water_level": 6.3673,
+        "color": [
+          173,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:33:13.798568"
+      },
+      {
+        "type": "response",
+        "ph": 5.822404,
+        "turbidity": 435,
+        "water_level": 5.196741,
+        "color": [
+          167,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:33:19.611665"
+      },
+      {
+        "type": "response",
+        "ph": 5.710968,
+        "turbidity": 437,
+        "water_level": 6.494211,
+        "color": [
+          173,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:33:25.272085"
+      },
+      {
+        "type": "response",
+        "ph": 5.738828,
+        "turbidity": 436,
+        "water_level": 6.480492,
+        "color": [
+          167,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:33:31.209990"
+      },
+      {
+        "type": "response",
+        "ph": 5.822404,
+        "turbidity": 435,
+        "water_level": 6.4702,
+        "color": [
+          167,
+          164,
+          187
+        ],
+        "timestamp": "2025-06-05T12:33:36.829341"
+      },
+      {
+        "type": "response",
+        "ph": 5.822404,
+        "turbidity": 435,
+        "water_level": 6.360438,
+        "color": [
+          166,
+          165,
+          186
+        ],
+        "timestamp": "2025-06-05T12:33:42.407043"
+      },
+      {
+        "type": "response",
+        "ph": 5.850265,
+        "turbidity": 434,
+        "water_level": 6.13406,
+        "color": [
+          166,
+          172,
+          187
+        ],
+        "timestamp": "2025-06-05T12:33:48.165759"
+      },
+      {
+        "type": "response",
+        "ph": 5.738828,
+        "turbidity": 437,
+        "water_level": 6.53537,
+        "color": [
+          174,
+          164,
+          186
+        ],
+        "timestamp": "2025-06-05T12:33:53.825832"
+      },
+      {
+        "type": "response",
+        "ph": 5.738828,
+        "turbidity": 438,
+        "water_level": 6.38788,
+        "color": [
+          166,
+          172,
+          187
+        ],
+        "timestamp": "2025-06-05T12:33:59.870072"
+      },
+      {
+        "type": "response",
+        "ph": 5.850265,
+        "turbidity": 435,
+        "water_level": 6.32271,
+        "color": [
+          167,
+          164,
+          187
+        ],
+        "timestamp": "2025-06-05T12:34:05.432256"
+      },
+      {
+        "type": "response",
+        "ph": 5.822404,
+        "turbidity": 435,
+        "water_level": 6.48735,
+        "color": [
+          167,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:34:11.083426"
+      },
+      {
+        "type": "response",
+        "ph": 5.822404,
+        "turbidity": 436,
+        "water_level": 6.42218,
+        "color": [
+          167,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:34:16.847647"
+      },
+      {
+        "type": "response",
+        "ph": 5.794546,
+        "turbidity": 437,
+        "water_level": 5.08012,
+        "color": [
+          167,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:34:22.575758"
+      },
+      {
+        "type": "response",
+        "ph": 5.738828,
+        "turbidity": 438,
+        "water_level": 6.545658,
+        "color": [
+          166,
+          165,
+          186
+        ],
+        "timestamp": "2025-06-05T12:34:28.547845"
+      },
+      {
+        "type": "response",
+        "ph": 5.710968,
+        "turbidity": 438,
+        "water_level": 6.463338,
+        "color": [
+          166,
+          165,
+          196
+        ],
+        "timestamp": "2025-06-05T12:34:34.254248"
+      },
+      {
+        "type": "response",
+        "ph": 5.710968,
+        "turbidity": 439,
+        "water_level": 6.48735,
+        "color": [
+          166,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:34:39.861394"
+      },
+      {
+        "type": "response",
+        "ph": 5.850265,
+        "turbidity": 435,
+        "water_level": 6.504498,
+        "color": [
+          174,
+          164,
+          187
+        ],
+        "timestamp": "2025-06-05T12:34:45.615899"
+      },
+      {
+        "type": "response",
+        "ph": 5.822404,
+        "turbidity": 436,
+        "water_level": 6.24382,
+        "color": [
+          167,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:34:51.229712"
+      },
+      {
+        "type": "response",
+        "ph": 5.710968,
+        "turbidity": 438,
+        "water_level": 6.360441,
+        "color": [
+          166,
+          164,
+          186
+        ],
+        "timestamp": "2025-06-05T12:34:56.925864"
+      },
+      {
+        "type": "response",
+        "ph": 5.822404,
+        "turbidity": 436,
+        "water_level": 6.473629,
+        "color": [
+          166,
+          165,
+          196
+        ],
+        "timestamp": "2025-06-05T12:35:02.586000"
+      },
+      {
+        "type": "response",
+        "ph": 5.822404,
+        "turbidity": 436,
+        "water_level": 4.894899,
+        "color": [
+          167,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:35:08.171335"
+      },
+      {
+        "type": "response",
+        "ph": 5.822404,
+        "turbidity": 435,
+        "water_level": 6.70001,
+        "color": [
+          173,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:35:14.308414"
+      },
+      {
+        "type": "response",
+        "ph": 5.766686,
+        "turbidity": 438,
+        "water_level": 6.30899,
+        "color": [
+          166,
+          172,
+          190
+        ],
+        "timestamp": "2025-06-05T12:35:20.025527"
+      },
+      {
+        "type": "response",
+        "ph": 5.710968,
+        "turbidity": 439,
+        "water_level": 6.357012,
+        "color": [
+          167,
+          165,
+          196
+        ],
+        "timestamp": "2025-06-05T12:35:25.971060"
+      },
+      {
+        "type": "response",
+        "ph": 5.738828,
+        "turbidity": 438,
+        "water_level": 6.41189,
+        "color": [
+          167,
+          165,
+          186
+        ],
+        "timestamp": "2025-06-05T12:35:31.915052"
+      },
+      {
+        "type": "response",
+        "ph": 5.738828,
+        "turbidity": 439,
+        "water_level": 5.076691,
+        "color": [
+          166,
+          164,
+          186
+        ],
+        "timestamp": "2025-06-05T12:35:37.630424"
+      },
+      {
+        "type": "response",
+        "ph": 5.738828,
+        "turbidity": 438,
+        "water_level": 6.562811,
+        "color": [
+          174,
+          171,
+          186
+        ],
+        "timestamp": "2025-06-05T12:35:43.359705"
+      },
+      {
+        "type": "response",
+        "ph": 5.738828,
+        "turbidity": 439,
+        "water_level": 6.57653,
+        "color": [
+          167,
+          164,
+          186
+        ],
+        "timestamp": "2025-06-05T12:35:49.054958"
+      },
+      {
+        "type": "response",
+        "ph": 5.683109,
+        "turbidity": 439,
+        "water_level": 6.617689,
+        "color": [
+          167,
+          164,
+          187
+        ],
+        "timestamp": "2025-06-05T12:35:54.611094"
+      },
+      {
+        "type": "response",
+        "ph": 5.738828,
+        "turbidity": 439,
+        "water_level": 6.56967,
+        "color": [
+          166,
+          164,
+          187
+        ],
+        "timestamp": "2025-06-05T12:36:00.358817"
+      },
+      {
+        "type": "response",
+        "ph": 5.710968,
+        "turbidity": 439,
+        "water_level": 5.159011,
+        "color": [
+          166,
+          170,
+          194
+        ],
+        "timestamp": "2025-06-05T12:36:07.316961"
+      },
+      {
+        "type": "response",
+        "ph": 5.822404,
+        "turbidity": 435,
+        "water_level": 6.494211,
+        "color": [
+          173,
+          165,
+          186
+        ],
+        "timestamp": "2025-06-05T12:36:13.181148"
+      },
+      {
+        "type": "response",
+        "ph": 5.738828,
+        "turbidity": 436,
+        "water_level": 6.73088,
+        "color": [
+          166,
+          164,
+          186
+        ],
+        "timestamp": "2025-06-05T12:36:19.376191"
+      },
+      {
+        "type": "response",
+        "ph": 5.822404,
+        "turbidity": 436,
+        "water_level": 6.569668,
+        "color": [
+          166,
+          164,
+          186
+        ],
+        "timestamp": "2025-06-05T12:36:25.053439"
+      },
+      {
+        "type": "response",
+        "ph": 5.683109,
+        "turbidity": 439,
+        "water_level": 6.216381,
+        "color": [
+          167,
+          164,
+          187
+        ],
+        "timestamp": "2025-06-05T12:36:31.903273"
+      },
+      {
+        "type": "response",
+        "ph": 5.850265,
+        "turbidity": 434,
+        "water_level": 6.202662,
+        "color": [
+          167,
+          164,
+          186
+        ],
+        "timestamp": "2025-06-05T12:36:37.650457"
+      },
+      {
+        "type": "response",
+        "ph": 5.65525,
+        "turbidity": 440,
+        "water_level": 6.535368,
+        "color": [
+          166,
+          163,
+          186
+        ],
+        "timestamp": "2025-06-05T12:36:43.256900"
+      },
+      {
+        "type": "response",
+        "ph": 5.710968,
+        "turbidity": 439,
+        "water_level": 6.381021,
+        "color": [
+          167,
+          164,
+          186
+        ],
+        "timestamp": "2025-06-05T12:36:48.962001"
+      },
+      {
+        "type": "response",
+        "ph": 5.65525,
+        "turbidity": 440,
+        "water_level": 6.449619,
+        "color": [
+          166,
+          164,
+          186
+        ],
+        "timestamp": "2025-06-05T12:36:54.622979"
+      },
+      {
+        "type": "response",
+        "ph": 5.683109,
+        "turbidity": 439,
+        "water_level": 6.449619,
+        "color": [
+          167,
+          164,
+          187
+        ],
+        "timestamp": "2025-06-05T12:37:00.265131"
+      },
+      {
+        "type": "response",
+        "ph": 5.710968,
+        "turbidity": 439,
+        "water_level": 6.538799,
+        "color": [
+          167,
+          164,
+          194
+        ],
+        "timestamp": "2025-06-05T12:37:05.990684"
+      },
+      {
+        "type": "response",
+        "ph": 5.822404,
+        "turbidity": 436,
+        "water_level": 6.453049,
+        "color": [
+          166,
+          165,
+          186
+        ],
+        "timestamp": "2025-06-05T12:37:11.911131"
+      },
+      {
+        "type": "response",
+        "ph": 5.683109,
+        "turbidity": 439,
+        "water_level": 6.70001,
+        "color": [
+          166,
+          164,
+          186
+        ],
+        "timestamp": "2025-06-05T12:37:17.554706"
+      },
+      {
+        "type": "response",
+        "ph": 5.683109,
+        "turbidity": 439,
+        "water_level": 6.672571,
+        "color": [
+          166,
+          164,
+          186
+        ],
+        "timestamp": "2025-06-05T12:37:23.271434"
+      },
+      {
+        "type": "response",
+        "ph": 5.683109,
+        "turbidity": 440,
+        "water_level": 6.70344,
+        "color": [
+          165,
+          171,
+          186
+        ],
+        "timestamp": "2025-06-05T12:37:28.896392"
+      },
+      {
+        "type": "response",
+        "ph": 5.683109,
+        "turbidity": 440,
+        "water_level": 6.542231,
+        "color": [
+          166,
+          164,
+          186
+        ],
+        "timestamp": "2025-06-05T12:37:34.863711"
+      },
+      {
+        "type": "response",
+        "ph": 5.766686,
+        "turbidity": 437,
+        "water_level": 6.53537,
+        "color": [
+          166,
+          164,
+          186
+        ],
+        "timestamp": "2025-06-05T12:37:40.468206"
+      },
+      {
+        "type": "response",
+        "ph": 5.683109,
+        "turbidity": 440,
+        "water_level": 5.121281,
+        "color": [
+          166,
+          164,
+          194
+        ],
+        "timestamp": "2025-06-05T12:37:46.156985"
+      },
+      {
+        "type": "response",
+        "ph": 5.710968,
+        "turbidity": 438,
+        "water_level": 6.617691,
+        "color": [
+          166,
+          164,
+          187
+        ],
+        "timestamp": "2025-06-05T12:37:52.102214"
+      },
+      {
+        "type": "response",
+        "ph": 5.599531,
+        "turbidity": 441,
+        "water_level": 6.511362,
+        "color": [
+          172,
+          162,
+          186
+        ],
+        "timestamp": "2025-06-05T12:37:57.806744"
+      },
+      {
+        "type": "response",
+        "ph": 5.543813,
+        "turbidity": 442,
+        "water_level": 5.183022,
+        "color": [
+          167,
+          165,
+          187
+        ],
+        "timestamp": "2025-06-05T12:38:03.449446"
+      },
+      {
+        "type": "response",
+        "ph": 5.376657,
+        "turbidity": 448,
+        "water_level": 4.68567,
+        "color": [
+          170,
+          166,
+          190
+        ],
+        "timestamp": "2025-06-05T12:38:09.478551"
+      },
+      {
+        "type": "response",
+        "ph": 5.766686,
+        "turbidity": 437,
+        "water_level": 6.34672,
+        "color": [
+          161,
+          160,
+          183
+        ],
+        "timestamp": "2025-06-05T12:38:15.119002"
+      },
+      {
+        "type": "response",
+        "ph": 5.683109,
+        "turbidity": 440,
+        "water_level": 6.545658,
+        "color": [
+          168,
+          160,
+          183
+        ],
+        "timestamp": "2025-06-05T12:38:20.821204"
+      },
+      {
+        "type": "response",
+        "ph": 5.181643,
+        "turbidity": 452,
+        "water_level": 5.159008,
+        "color": [
+          160,
+          159,
+          182
+        ],
+        "timestamp": "2025-06-05T12:38:26.666333"
+      },
+      {
+        "type": "response",
+        "ph": 8.608329,
+        "turbidity": 338,
+        "water_level": 4.939489,
+        "color": [
+          163,
+          157,
+          179
+        ],
+        "timestamp": "2025-06-05T12:38:32.426066"
+      },
+      {
+        "type": "response",
+        "ph": 5.710968,
+        "turbidity": 437,
+        "water_level": 6.53537,
+        "color": [
+          160,
+          159,
+          182
+        ],
+        "timestamp": "2025-06-05T12:38:38.026233"
+      },
+      {
+        "type": "response",
+        "ph": 5.599531,
+        "turbidity": 442,
+        "water_level": 6.144352,
+        "color": [
+          168,
+          166,
+          191
+        ],
+        "timestamp": "2025-06-05T12:38:43.664182"
+      },
+      {
+        "type": "response",
+        "ph": 5.432375,
+        "turbidity": 446,
+        "water_level": 6.240388,
+        "color": [
+          168,
+          173,
+          188
+        ],
+        "timestamp": "2025-06-05T12:38:49.304979"
+      },
+      {
+        "type": "response",
+        "ph": 5.376657,
+        "turbidity": 449,
+        "water_level": 6.676001,
+        "color": [
+          167,
+          165,
+          188
+        ],
+        "timestamp": "2025-06-05T12:38:54.976979"
+      },
+      {
+        "type": "response",
+        "ph": 6.296011,
+        "turbidity": 424,
+        "water_level": 6.216381,
+        "color": [
+          171,
+          167,
+          191
+        ],
+        "timestamp": "2025-06-05T12:39:01.819946"
+      },
+      {
+        "type": "response",
+        "ph": 6.01742,
+        "turbidity": 427,
+        "water_level": 5.96942,
+        "color": [
+          168,
+          166,
+          190
+        ],
+        "timestamp": "2025-06-05T12:39:07.430937"
+      },
+      {
+        "type": "response",
+        "ph": 5.543813,
+        "turbidity": 443,
+        "water_level": 6.281549,
+        "color": [
+          171,
+          165,
+          188
+        ],
+        "timestamp": "2025-06-05T12:39:13.028812"
+      },
+      {
+        "type": "response",
+        "ph": 5.65525,
+        "turbidity": 441,
+        "water_level": 6.60054,
+        "color": [
+          177,
+          165,
+          188
+        ],
+        "timestamp": "2025-06-05T12:39:18.835579"
+      },
+      {
+        "type": "response",
+        "ph": 5.543813,
+        "turbidity": 444,
+        "water_level": 3.53912,
+        "color": [
+          170,
+          167,
+          190
+        ],
+        "timestamp": "2025-06-05T12:39:24.866263"
+      },
+      {
+        "type": "response",
+        "ph": 5.738828,
+        "turbidity": 438,
+        "water_level": 3.563129,
+        "color": [
+          177,
+          167,
+          190
+        ],
+        "timestamp": "2025-06-05T12:39:30.651172"
+      },
+      {
+        "type": "response",
+        "ph": 5.738828,
+        "turbidity": 439,
+        "water_level": 6.70344,
+        "color": [
+          167,
+          172,
+          188
+        ],
+        "timestamp": "2025-06-05T12:39:36.348109"
+      },
+      {
+        "type": "response",
+        "ph": 6.073138,
+        "turbidity": 428,
+        "water_level": 4.69253,
+        "color": [
+          160,
+          158,
+          188
+        ],
+        "timestamp": "2025-06-05T12:39:42.255733"
+      },
+      {
+        "type": "response",
+        "ph": 5.710968,
+        "turbidity": 439,
+        "water_level": 5.224178,
+        "color": [
+          160,
+          159,
+          182
+        ],
+        "timestamp": "2025-06-05T12:39:47.953873"
+      },
+      {
+        "type": "response",
+        "ph": 5.627391,
+        "turbidity": 442,
+        "water_level": 4.740551,
+        "color": [
+          168,
+          160,
+          184
+        ],
+        "timestamp": "2025-06-05T12:39:53.818141"
+      },
+      {
+        "type": "response",
+        "ph": 5.766686,
+        "turbidity": 436,
+        "water_level": 6.51479,
+        "color": [
+          159,
+          158,
+          179
+        ],
+        "timestamp": "2025-06-05T12:40:00.615869"
+      },
+      {
+        "type": "response",
+        "ph": 6.268152,
+        "turbidity": 425,
+        "water_level": 4.750843,
+        "color": [
+          150,
+          156,
+          170
+        ],
+        "timestamp": "2025-06-05T12:40:06.228903"
+      },
+      {
+        "type": "response",
+        "ph": 6.40745,
+        "turbidity": 426,
+        "water_level": 6.048309,
+        "color": [
+          143,
+          144,
+          160
+        ],
+        "timestamp": "2025-06-05T12:40:11.821064"
+      },
+      {
+        "type": "response",
+        "ph": 5.65525,
+        "turbidity": 440,
+        "water_level": 6.52165,
+        "color": [
+          155,
+          154,
+          175
+        ],
+        "timestamp": "2025-06-05T12:40:17.502549"
+      },
+      {
+        "type": "response",
+        "ph": 5.65525,
+        "turbidity": 440,
+        "water_level": 2.347981,
+        "color": [
+          156,
+          155,
+          177
+        ],
+        "timestamp": "2025-06-05T12:40:23.150089"
+      },
+      {
+        "type": "response",
+        "ph": 5.627391,
+        "turbidity": 440,
+        "water_level": 3.521969,
+        "color": [
+          155,
+          155,
+          175
+        ],
+        "timestamp": "2025-06-05T12:40:28.861552"
+      },
+      {
+        "type": "response",
+        "ph": 5.65525,
+        "turbidity": 439,
+        "water_level": 3.587139,
+        "color": [
+          162,
+          155,
+          175
+        ],
+        "timestamp": "2025-06-05T12:40:34.476361"
+      },
+      {
+        "type": "response",
+        "ph": 5.738828,
+        "turbidity": 436,
+        "water_level": 6.507931,
+        "color": [
+          154,
+          154,
+          173
+        ],
+        "timestamp": "2025-06-05T12:40:40.215657"
+      },
+      {
+        "type": "response",
+        "ph": 5.404517,
+        "turbidity": 446,
+        "water_level": 6.7103,
+        "color": [
+          150,
+          150,
+          170
+        ],
+        "timestamp": "2025-06-05T12:40:45.734156"
+      },
+      {
+        "type": "response",
+        "ph": 5.376657,
+        "turbidity": 446,
+        "water_level": 4.819439,
+        "color": [
+          162,
+          166,
+          182
+        ],
+        "timestamp": "2025-06-05T12:40:51.405025"
+      },
+      {
+        "type": "response",
+        "ph": 5.153784,
+        "turbidity": 456,
+        "water_level": 6.398172,
+        "color": [
+          177,
+          173,
+          199
+        ],
+        "timestamp": "2025-06-05T12:40:56.984527"
+      },
+      {
+        "type": "response",
+        "ph": 5.432375,
+        "turbidity": 445,
+        "water_level": 3.5254,
+        "color": [
+          179,
+          174,
+          200
+        ],
+        "timestamp": "2025-06-05T12:41:02.641525"
+      },
+      {
+        "type": "response",
+        "ph": 5.460236,
+        "turbidity": 444,
+        "water_level": 4.68567,
+        "color": [
+          179,
+          174,
+          210
+        ],
+        "timestamp": "2025-06-05T12:41:08.249753"
+      },
+      {
+        "type": "response",
+        "ph": 5.488093,
+        "turbidity": 444,
+        "water_level": 6.068892,
+        "color": [
+          184,
+          178,
+          204
+        ],
+        "timestamp": "2025-06-05T12:41:13.866206"
+      }
+    ]
   }
 ]

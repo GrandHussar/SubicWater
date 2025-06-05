@@ -170,13 +170,13 @@ def export_xml_group(group_id):
         records_elem = ET.SubElement(root, "Records")
         for record in group["records"]:
             record_elem = ET.SubElement(records_elem, "Record")
-            ET.SubElement(record_elem, "PH").text = str(record.get("pH", ""))
-            ET.SubElement(record_elem, "Turbidity").text = str(record.get("Turbidity", ""))
+            ET.SubElement(record_elem, "ph").text = str(record.get("pH", ""))
+            ET.SubElement(record_elem, "turbidity").text = str(record.get("Turbidity", ""))
             ET.SubElement(record_elem, "Flow").text = str(record.get("Flow", ""))
-            ET.SubElement(record_elem, "WaterLevel").text = str(record.get("WaterLevel", ""))
+            ET.SubElement(record_elem, "water_level").text = str(record.get("WaterLevel", ""))
             color = record.get("Color", [])
             color_text = ", ".join(map(str, color)) if isinstance(color, list) else str(color)
-            ET.SubElement(record_elem, "ColorRGB").text = color_text
+            ET.SubElement(record_elem, "color").text = color_text
             ET.SubElement(record_elem, "Timestamp").text = record.get("timestamp", "")
 
         xml_data = ET.tostring(root, encoding='utf-8')

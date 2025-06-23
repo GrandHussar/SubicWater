@@ -133,7 +133,7 @@ const Dashboard = () => {
         const [r, g, b] = data.color || [255, 255, 255];
 const hex = `#${[r, g, b].map(x => x.toString(16).padStart(2, '0')).join('')}`.toUpperCase();
 
-let condition = 'Unknown';
+let condition = 'Normal';
 
 if (r === 0 && g === 0 && b === 255) {
   condition = 'Clean';

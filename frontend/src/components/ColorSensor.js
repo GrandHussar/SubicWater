@@ -20,7 +20,7 @@ const ColorSensor = ({ detectedHex, colorName, lastUpdated }) => {
     <div className="color-sensor-panel">
       <h3>Color Recognition</h3>
       <div className="color-box" style={{ backgroundColor: hex }}></div>
-      <p><strong>Detected:</strong> {colorName || 'Unknown'}</p>
+      <p><strong>Detected:</strong> {colorName || 'Normal'}</p>
       <p><strong>Status:</strong> {status}</p>
       <p className="timestamp">Last Updated: {lastUpdated}</p>
     </div>
